@@ -1,0 +1,31 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+    "name": "Multi-tab",
+
+    "description": "Open multiple webpages with one click!",
+
+    "manifest_version": 2,
+
+    "version": "0.8",
+
+    "browser_action": {
+        "default_icon": "images/multi-tab-16.png"
+    },
+
+    "icons": {
+        "16": "images/multi-tab-16.png",
+        "128": "images/multi-tab-128-blue.png"
+    },
+
+    "permissions": ["tabs"],
+
+    "background": {
+        "scripts": ["scripts/background.js"],
+        "persistent": false
+    },
+
+    "options_page": "options.html",
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}

@@ -1,0 +1,15 @@
+.breakable-word {
+    word-break: break-all;
+}
+
+.description {
+    width: 16em;
+}
+
+.delete-checkbox-container {
+    width: 3em;
+}
+
+.hide-if-empty, .show-if-empty {
+    display: none;
+}

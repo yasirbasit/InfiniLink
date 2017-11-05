@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multi-tab options</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="lib/bootstrap-3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="styles/custom.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-1">
+                        <img src="images/multi-tab-128-blue.png" alt="Multi-tab">
+                    </div>
+                    <div class="col-md-11">
+                        <h1>InfiniLink Options</h1>
+                    </div>
+                </div>
+                <p class="lead">Use this page to create or modify the list of webpages you want to open.</p>
+            </div>
+            <div id="update-and-delete-urls">
+                <h3>Pages to Open</h3>
+                <div class="alert alert-info hide-if-empty">Drag and drop to modify order.</div>
+                <div class="alert alert-warning show-if-empty">No pages are saved! Create a list of pages using the input fields below.</div>
+                <table class="table table-striped hide-if-empty">
+                    <thead>
+                        <th>&nbsp;</th>
+                        <th>Description</th>
+                        <th>URL</th>
+                    </thead>
+                    <tbody id="url-tbody">
+                    </tbody>
+                    <script id="url-record-template" type="text/template">
+                        <tr data-id="<%= id %>" data-order="<%= order %>">
+                            <td class="delete-checkbox-container"><input type="checkbox" name="to-delete"></td>
+                            <td class="description"><%= description %></td>
+                            <td class="breakable-word"><%= url %></td>
+                        </tr>
+                    </script>
+                </table>
+                <p>
+                    <button id="delete-selected-button" type="button" class="btn btn-primary hide-if-empty" disabled><span class="glyphicon glyphicon-remove"></span> Delete selected</button>
+                </p>
+            </div>
+            <hr>
+            <div id="insert-url">
+                <h3>Add Page</h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <p>Description</p>
+                        <input id="description-input" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-9">
+                        <p>URL</p>
+                        <input id="url-input" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">&nbsp;</div>
+                </div>
+                <p>
+                    <button id="save-url-button" type="button" class="btn btn-primary" disabled><span class="glyphicon glyphicon-save"></span> Save</button>
+                </p>
+            </div>
+        </div>
+
+        <script src="lib/jquery-2.0.3.min.js"></script>
+        <script src="lib/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+        <script src="lib/jquery-ui-1.10.3.min.js"></script>
+        <script src="lib/underscore-1.5.2.min.js"></script>
+        <script src="lib/backbone-1.1.0.min.js"></script>
+        <script src="scripts/insert-url-view.js"></script>
+        <script src="scripts/update-url-view.js"></script>
+        <script src="scripts/options.js"></script>
+    </body>
+</html>
